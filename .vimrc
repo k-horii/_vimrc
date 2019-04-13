@@ -16,8 +16,6 @@ set number
 
 set cursorline
 
-set cursorcolumn
-
 set virtualedit=onemore
 
 set smartindent
@@ -33,8 +31,6 @@ nnoremap k gk
 
 syntax enable
 
-
-set list listchars=tab:\➤\-
 
 set expandtab
 
@@ -54,3 +50,29 @@ set wrapscan
 set hlsearch
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+
+"dein Scripts-----------------------------
+
+if &compatible
+  set nocompatible
+endif
+
+" Required:
+set runtimepath+=/home/k-horii/_vimrc/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/home/k-horii/_vimrc/dein')
+  call dein#begin('/home/k-horii/_vimrc/dein')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+"End dein Scripts-------------------------
+
