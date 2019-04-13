@@ -1,1 +1,0 @@
-# This repository manages ~/.vimrc
