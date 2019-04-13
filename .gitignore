@@ -1,0 +1,8 @@
+# ignore files
+  dein/.cache/.vimrc/.dein/ftplugin.vim
+	dein/.cache/.vimrc/merged
+	dein/.cache/.vimrc/rollbacks/vim/20190413142749
+	dein/cache_vim
+	dein/repos/github.com/Shougo/dein.vim
+	dein/state_vim.vim
+
