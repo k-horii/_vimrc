@@ -1,0 +1,7 @@
+[[plugins]]
+# Open file while other file open with vim
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+# asynchronous code check (supported to Python, HTML, Ruby, etc)
+repo = 'w0rp/ale'

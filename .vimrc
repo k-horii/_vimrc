@@ -58,21 +58,36 @@ if &compatible
   set nocompatible
 endif
 
-" Required:
-set runtimepath+=/home/k-horii/_vimrc/dein/repos/github.com/Shougo/dein.vim
+let s:dein_dir = expand('~/_vimrc/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" Required:
-if dein#load_state('/home/k-horii/_vimrc/dein')
-  call dein#begin('/home/k-horii/_vimrc/dein')
+if &runtimepath !~# 'dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
 
-  " Required:
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  let g:rc_dir    = expand('~/_vimrc/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  call dein#load_toml(s:toml,       {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
   call dein#end()
   call dein#save_state()
 endif
 
-" Required:
 filetype plugin indent on
 syntax enable
+
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
