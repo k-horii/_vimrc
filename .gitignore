@@ -1,4 +1,7 @@
-# ignore filess
+# ignore files and directory
+# Add or modify settings, execute following commands.
+# $ git rm -r --cache [filename]
+
 /dein/.cache/
 /dein/cache_vim
 /dein/repos/github.com/Shougo/dein.vim
