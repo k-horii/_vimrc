@@ -58,7 +58,7 @@ if &compatible
   set nocompatible
 endif
 
-let s:dein_dir = expand('~/_vimrc/dein')
+let s:dein_dir = expand('~/dotfiles/_vimrc/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &runtimepath !~# 'dein.vim'
@@ -71,7 +71,7 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  let g:rc_dir    = expand('~/_vimrc/rc')
+  let g:rc_dir    = expand('~/dotfiles/_vimrc/rc')
   let s:toml      = g:rc_dir . '/dein.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
